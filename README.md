@@ -1,4 +1,4 @@
-# Airflow Docker - Data Engineering Project
+# Orchestrateur de Flux de Données avec Apache Airflow
 
 Dans le cadre de mon apprentissage du Data Engineering, j'ai mis en œuvre un orchestrateur de flux de données à l'aide d'Apache Airflow afin d'automatiser des pipelines ETL avec Python et SQLite. Ce travail se concentre sur la planification de tâches (Scheduling), la gestion des dépendances entre opérateurs et la conteneurisation pour comprendre comment les composants (Scheduler, Webserver, Workers) interagissent et réagissent en cas de défaillance.
 
