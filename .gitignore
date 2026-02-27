@@ -1,0 +1,53 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Docker files
+*.log
+*.pid
+
+# Airflow files
+airflow.cfg
+airflow.db
+*.airflow
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Test results
+*.pytest_cache/
+.cache/
+
+# Misc
+*.swp
+*.bak
+*.tmp
+
+# Ignore local environment variables
+.env
+.env.local
+.env.*.local
