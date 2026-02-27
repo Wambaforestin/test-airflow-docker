@@ -1,6 +1,6 @@
 # Orchestrateur de Flux de Données avec Apache Airflow
 
-Dans le cadre de mon apprentissage du Data Engineering, j'ai mis en œuvre un orchestrateur de flux de données à l'aide d'Apache Airflow afin d'automatiser des pipelines ETL avec Python et SQLite. Ce travail se concentre sur la planification de tâches (Scheduling), la gestion des dépendances entre opérateurs et la conteneurisation pour comprendre comment les composants (Scheduler, Webserver, Workers) interagissent et réagissent en cas de défaillance.
+Dans le cadre de mon apprentissage du `Data Engineering`, j'ai mis en œuvre un orchestrateur de flux de données à l'aide d'Apache Airflow afin d'automatiser des taches écrites en `Python`. Ce travail se concentre sur la planification de tâches (Scheduling), la gestion des dépendances entre opérateurs et la conteneurisation pour comprendre comment les composants (Scheduler, Webserver, Workers) interagissent et réagissent en cas de défaillance.
 
 ## Prérequis
 
@@ -86,6 +86,24 @@ docker compose down --volumes --remove-orphans
 
 # Nettoyer les fichiers locaux (logs et plugins)
 rm -rf ./logs/* ./plugins/*
+```
+
+## Désactiver les DAGs d'exemple et réinitialiser la base de données
+
+Pour ne pas charger les DAGs d'exemple d'Airflow, ajoutez la variable suivante dans votre configuration (par exemple dans le fichier `.env` ou dans la section `environment` de votre `docker-compose.yaml`) :
+
+```yaml
+AIRFLOW__CORE__LOAD_EXAMPLES: 'false' # line 65 dans docker-compose.yaml
+```
+
+### Étape 2 : Réinitialiser la base de données et redémarrer
+
+Ouvrez votre terminal et exécutez ces commandes pour supprimer l'ancienne base de données (avec les exemples), en initialiser une propre, puis relancer Airflow :
+
+```bash
+docker compose down --volumes --remove-orphans
+docker compose up airflow-init
+docker compose up -d
 ```
 
 ## Structure du Projet
