@@ -20,7 +20,7 @@ Dans le cadre de mon apprentissage du `Data Engineering`, j'ai mis en œuvre un 
     mkdir -p ./dags ./logs ./plugins ./config
 
     # Initialiser l'environnement Python avec uv
-    uv init
+    uv init ou uv init --bare . # (selon votre préférence)
     uv add apache-airflow
     ```
 
