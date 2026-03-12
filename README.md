@@ -4,12 +4,17 @@ Dans le cadre de mon apprentissage du `Data Engineering`, j'ai mis en œuvre un 
 
 ## Note de version
 
-> Airflow 2.x
+```Python
+# Airflow 2.x
 from airflow import DAG
 from airflow.operators.python import PythonOperator, BranchPythonOperator
-> Airflow 3.x
+```
+
+```Python
+# Airflow 3.x
 from airflow.sdk import DAG
 from airflow.providers.standard.operators.python import PythonOperator, BranchPythonOperator
+```
 
 ## Prérequis
 
