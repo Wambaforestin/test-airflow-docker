@@ -39,7 +39,7 @@ with DAG(
 
     extract_task >> transform_task >> load_task
 ```
-# 🧠 Différences Clés à Connaître
+# Différences Clés à Connaître
 
 1. **Les task_id sont automatiques**
      - Ancien :

@@ -29,7 +29,7 @@ def etl():
 
 etl()
 ```
-# 🧠 Différences Clés à Connaître
+# Différences Clés à Connaître
 
 1. **Les task_id sont automatiques**
      - Ancien :
@@ -88,7 +88,7 @@ etl()
                  ...
          ```
 
-✔️ **Avantages de la nouvelle méthode**
+**Avantages de la nouvelle méthode**
 - Plus propre, Pythonique et moderne
 - Les fonctions deviennent des tâches
 - Passage automatique des données (XCom)
@@ -121,6 +121,6 @@ etl()
 | Dépendances            | >> / <<          | Appels de fonctions |
 | Lisibilité             | Moyenne          | Excellente    |
 | Boilerplate            | Élevé            | Faible        |
-| Recommandé             | ❌ Non           | ✔️ Oui        |
+| Recommandé             |  Non             | Oui        |
 
 La nouvelle syntaxe est plus propre, plus sûre, plus Pythonique, et c'est la méthode recommandée aujourd'hui par la communauté Airflow.
