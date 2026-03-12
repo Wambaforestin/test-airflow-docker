@@ -6,7 +6,7 @@ from airflow.sdk import dag, task
 def first_dag():
     
     @task.python
-    def first_task(var):
+    def first_task():
         print("This is the first task.")
         
     @task.python
@@ -14,10 +14,10 @@ def first_dag():
         print("This is the secode task.")
         
     @task.python
-    def third_task():
+    def third_task(var):
         print("The is the third and last task. Yes, finally!")
         
     # defining dependencies
-    first_task(second_task(third_task()))
+    third_task(second_task(first_dag()))
     
 first_dag()
