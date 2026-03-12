@@ -2,6 +2,15 @@
 
 Dans le cadre de mon apprentissage du `Data Engineering`, j'ai mis en œuvre un orchestrateur de flux de données à l'aide d'Apache Airflow afin d'automatiser des taches écrites en `Python`. Ce travail se concentre sur la planification de tâches (Scheduling), la gestion des dépendances entre opérateurs et la conteneurisation pour comprendre comment les composants (Scheduler, Webserver, Workers) interagissent et réagissent en cas de défaillance.
 
+## Note de version
+
+> Airflow 2.x
+from airflow import DAG
+from airflow.operators.python import PythonOperator, BranchPythonOperator
+> Airflow 3.x
+from airflow.sdk import DAG
+from airflow.providers.standard.operators.python import PythonOperator, BranchPythonOperator
+
 ## Prérequis
 
 - **Docker Desktop** : Installé et lancé (allouer au moins 4 Go de RAM).

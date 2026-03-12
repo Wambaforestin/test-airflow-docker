@@ -1,26 +1,29 @@
-from airflow.sdk import dag, task
+from airflow.sdk import DAG
+from airflow.providers.standard.operators.empty import EmptyOperator
 
-@dag(
-    dag_id="first_dag",
-)
-def first_dag():
-    @task.python
-    def first_task():
-        print("This is the first task.")
-        return "done1"
+default_args = {
+    'owner': 'airflow',
+}
 
-    @task.python
-    def second_task(prev):
-        print("This is the second task.")
-        return "done2"
+with DAG(
+    dag_id='first_dag',
+    default_args=default_args,
+    tags=['test', 'empty']
+) as dag:
 
-    @task.python
-    def third_task(prev):
-        print("This is the third and last task. Yes, finally!")
+    first_task_op = EmptyOperator(
+        task_id='first_task',
+        dag=dag,
+    )
 
-    # Strict sequential execution: first -> second -> third
-    a = first_task()
-    b = second_task(a)
-    third_task(b)
+    second_task_op = EmptyOperator(
+        task_id='second_task',
+        dag=dag,
+    )
 
-first_dag()
+    third_task_op = EmptyOperator(
+        task_id='third_task',
+        dag=dag,
+    )
+
+    first_task_op >> second_task_op >> third_task_op
